@@ -3637,7 +3637,7 @@ function buildBuddy(){
 function placeBuddy(){
   const B=CH.buddy;if(!B)return;
   if(G.phase==='menu'){B.root.position.set(.2,0,2.5);B.yaw=-.3;}
-  else{B.root.position.set(BUDDY_SPOT.x,0,BUDDY_SPOT.z);B.yaw=G.role==='keep'?Math.PI:.15;}
+  else{B.root.position.set(BUDDY_SPOT.x,0,BUDDY_SPOT.z);B.yaw=.15;}
   buddyPose(B,'idle',WORLD.t);
 }
 /* the buddy cheers or droops for a few seconds */
@@ -3885,7 +3885,7 @@ function nextKick(first){
     else if(G.keeper&&!SAVE.opt.fakeSeen&&G.ownKicks>=4&&G.ownKicks<=6)hint('Tip: double-tap the ball to fake out the keeper');
     else hint('');
   }else{
-    camPreset('keep',true,4);
+    camPreset('shoot',true,4);
     G.phase='ready';G.cpuWait=rnd(1.3,2.1);
     hint('TAP where the ball is going. Tap again to change your mind!');
   }
